@@ -8,14 +8,14 @@ angular.module('myApp.directives', [])
   .directive('note', [function () {
     return {
       restrict: 'E',
-      templateUrl: 'partials/directive-templates/note.html'
+      templateUrl: 'views/directive-templates/note.html'
     };
   }])
 
   .directive('categories', [function () {
     return {
       restrict: 'E',
-      templateUrl: 'partials/directive-templates/categories.html'
+      templateUrl: 'views/directive-templates/categories.html'
     }
   }])
 
@@ -23,7 +23,7 @@ angular.module('myApp.directives', [])
     return {
       restrict: 'A',
       transclude: true,
-      templateUrl: 'partials/directive-templates/jg-deletable.html',
+      templateUrl: 'views/directive-templates/jg-deletable.html',
       scope: {
         x: '=item',
         removeMethod: '='

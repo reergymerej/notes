@@ -7,7 +7,5 @@ angular.element(document).ready(function() {
     //Then init the app
     // angular.bootstrap(document, ['mean']);
 
-    console.log(angular.module('myApp'));
-    debugger;
     angular.bootstrap(document, ['myApp']);
 });
