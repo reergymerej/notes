@@ -1,0 +1,80 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/*================================================
+*/
+
+form input {
+  width: 200px;
+}
+
+.note-text {
+  width: 200px;
+}
+
+ul.notes,
+ul.categories {
+  list-style: none;
+  padding: 0;
+}
+
+ul.notes > li,
+ul.categories > li {
+  margin: 0.5em;
+}
+
+.category-color {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.admin {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.support {
+  background-color: rgba(255, 165, 0, 0.5);
+}
+.coding {
+  background-color: rgba(128, 0, 128, 0.5);
+}
+.break {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+.other {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+.jira {
+  background-color: rgba(128, 128, 128, 0.5);
+}

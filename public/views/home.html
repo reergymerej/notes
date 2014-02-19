@@ -1,0 +1,30 @@
+<h2>Home</h2>
+<form
+  name="form"
+  class="form-inline"
+  novalidate>
+  <input
+    class="form-control"
+    placeholder="add note here"
+    ng-model="noteText"
+    required
+    />
+  <categories
+    c="c"
+    categories="categories">
+  </categories>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    ng-disabled="form.$invalid"
+    ng-click="newNote()">
+    <span class="glyphicon glyphicon-plus"></span>
+    new note
+  </button>
+</form>
+
+<ul class="notes">
+  <li ng-repeat="n in notes">
+    <note></note>
+  </li>
+</ul>

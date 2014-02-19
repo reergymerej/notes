@@ -1,0 +1,77 @@
+<div
+  class="note">
+  <div class="btn-group">
+    
+    <button
+      class="btn btn btn-default"
+      ng-click="stop(n)"
+      ng-hide="n.dateEnd">
+      <span class="glyphicon glyphicon-pause"></span>
+    </button>
+
+    <button
+      class="btn btn btn-default"
+      ng-click="copyNote(n)"
+      ng-hide="!n.dateEnd">
+      <span class="glyphicon glyphicon-play"></span>
+    </button>
+
+    <button
+      type="button"
+      class="btn btn btn-default dropdown-toggle"
+      data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+
+    <ul
+      class="dropdown-menu"
+      role="menu">
+      <li><a href="#" ng-click="copyNoteByCategory(n)"><span class="glyphicon glyphicon-chevron-right"></span> copy by category</a></li>
+      <li class="divider"></li>
+      <li ng-repeat="c in categories" class="{{ c }}">
+        <a href="#" ng-click="setCategory(c, n)">{{ c }}</a>
+      </li>
+      <li class="divider"></li>
+      <li><a href="#" ng-click="deleteNote(n)" class="bg-danger"><span class="glyphicon glyphicon-remove"></span> remove</a></li>
+    </ul>
+  </div>
+  <div class="category-color {{ n.category }}"></div>
+
+  <small class="text-muted">
+    {{ n | timesummary }}
+  </small>
+  <span
+    class="clickable"
+    ng-click="n.editMode = !n.editMode"
+    ng-hide="n.editMode">
+    {{ n.text }}
+  </span>
+
+  <form
+    name="form"
+    class="form-inline"
+    ng-hide="!n.editMode"
+    novalidate>
+    <div
+      class="form-group">
+      <input
+        class="form-control note-text"
+        ng-model="n.text"
+        required />
+
+    </div>
+    <button
+      type="submit"
+      class="btn btn-default"
+      ng-click="setNoteText(n, n.text)">
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
+
+    <button
+      class="btn btn-default"
+      ng-click="revertChanges(n)"
+      ng-hide="true">
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+  </form>
+</div>
